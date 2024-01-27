@@ -7,5 +7,5 @@ def add(x,y):
     return x + y
 
 def subtract(x,y):
-    """substract - + y and Return Results"""
+    """subtract - + y and Return Results"""
     return y - x
