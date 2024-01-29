@@ -7,15 +7,14 @@ from django.test import SimpleTestCase
 from app import calc
 
 class CalcTests(SimpleTestCase):
-    """test the calc Module"""
+    """Test the calc Module"""
+
     def test_add_numbers(self):
         """Test adding numbers together"""
-        res= calc.add(5,6)
-        
-        self.assertEqual(res,11)
-        
-    def test_substract_numbers(self):
-        """Test substract numbers together"""
-        res= calc.subtract(10,15)
-        
-        self.assertEqual(res,5)        
+        res = calc.add(5, 6)
+        self.assertEqual(res, 11)
+
+    def test_subtract_numbers(self):
+        """Test subtracting numbers together"""
+        res = calc.subtract(10, 15)
+        self.assertEqual(res, 5)    
