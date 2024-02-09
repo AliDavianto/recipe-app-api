@@ -3,17 +3,17 @@ Test for the user API
 """
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from django.urls import reverse
+from django.urls import reverse_lazy
 
 from rest_framework.test import APIClient
 from rest_framework import status
 
 
-CREATE_USER_URL = reverse('user:create')
+CREATE_USER_URL = reverse_lazy('user:create')
 
 
 def create_user(**params):
-    """Create and return a nwe user"""
+    """Create and return a new user"""
     return get_user_model().objects.create_user(**params)
 
 
