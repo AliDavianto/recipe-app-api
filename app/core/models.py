@@ -10,12 +10,12 @@ from django.contrib.auth.models import (
 
 
 class UserManager(BaseUserManager):
-    """Manager for Users"""
+    """Manager for users."""
 
     def create_user(self, email, password=None, **extra_field):
-        """Create, save and return a new user"""
+        """Create, save and return a new user."""
         if not email:
-            raise ValueError('User must have an Email Address')
+            raise ValueError('User must have an email address.')
         user = self.model(email=self.normalize_email(email), **extra_field)
         user.set_password(password)
         user.save(using=self._db)
@@ -23,7 +23,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password):
-        """Create and return a Superuser"""
+        """Create and return a new superuser."""
         user = self.create_user(email, password)
         user.is_staff = True
         user.is_superuser = True
@@ -33,7 +33,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """User in the system"""
+    """User in the system."""
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
