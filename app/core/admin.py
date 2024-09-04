@@ -12,12 +12,12 @@ class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
     ordering = ['id']
     list_display = ['email', 'name']
-    fieldsets =  (
+    fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (
             _('Permissions'),
             {
-                'fields':(
+                'fields': (
                     'is_active',
                     'is_staff',
                     'is_superuser'
@@ -41,5 +41,6 @@ class UserAdmin(BaseUserAdmin):
             )
         }),
     )
+
 
 admin.site.register(models.User, UserAdmin)
