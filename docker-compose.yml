@@ -35,4 +35,4 @@ services:
 
 volumes:
   dev-db-data:
-  dev-static-data:  # Add this line to declare the named volume
+  dev-static-data:

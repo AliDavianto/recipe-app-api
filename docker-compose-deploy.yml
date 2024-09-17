@@ -3,7 +3,7 @@ version: "3.9"
 services:
   app:
     build:
-      context: .  # Add your build context here, "." means the current directory
+      context: .
     restart: always
     volumes:
       - static-data:/vol/web
